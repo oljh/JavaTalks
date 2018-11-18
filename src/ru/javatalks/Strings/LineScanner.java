@@ -1,15 +1,15 @@
-package ru.javatalks.stringReader;
+package ru.javatalks.Strings;
 
 import java.util.Scanner;
 
 public class LineScanner {
 	public static void main(String[] args) {
 		int n = 0;
-do {
+		do {
 			System.out.println("Input how many string: ");
 			Scanner sc = new Scanner(System.in).useDelimiter("\\s");
 			n = sc.nextInt();
-} while (n < 1);
+		} while (n < 1);
 
 	}
 }
