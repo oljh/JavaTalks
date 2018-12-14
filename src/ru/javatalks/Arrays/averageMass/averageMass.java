@@ -1,4 +1,4 @@
-package ru.javatalks.arrays.averageMass;
+package ru.javatalks.Arrays.averageMass;
 
 import java.util.Random;
 import java.util.Scanner;
