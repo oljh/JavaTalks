@@ -1,4 +1,4 @@
-package ru.javatalks.Strings;
+package ru.javatalks.strings;
 
 import java.util.Scanner;
 

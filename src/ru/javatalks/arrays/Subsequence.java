@@ -1,4 +1,4 @@
-package ru.javatalks.Arrays;
+package ru.javatalks.arrays;
 
 import java.util.ArrayList;
 
