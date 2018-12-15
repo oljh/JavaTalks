@@ -1,28 +1,24 @@
 package ru.javatalks.Arrays.maxEqual;
 
-import java.awt.Point;
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class maxEqual {
-	int[][] A = null;
-	int temp;
-	int x;
-	int y;
-	Point p = new Point(0,0);
-	Integer maxEqual = null;
-	public void main(String[] args) {
-		
+
+	public static void main(String[] args) {
+		int[][] A = null;
+		int[][] B = null;
+		int maxEqual = 0;
 		Random random = new Random();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Введите X размерность массива:");
-		x = Integer.parseInt(sc.nextLine());
+		int x = Integer.parseInt(sc.nextLine());
 		System.out.println("Введите Y размерность массива:");
-		y = Integer.parseInt(sc.nextLine());
+		int y = Integer.parseInt(sc.nextLine());
 		if (x > 0 & y > 0) {
 			A = new int[x][y];
 			System.out.println("Исходный массив:");
+			// Заполнение массива
 			for (int i = 0; i < x; i++) {
 				for (int j = 0; j < y; j++) {
 					A[i][j] = random.nextInt(20);
@@ -30,26 +26,28 @@ public class maxEqual {
 				}
 				System.out.println();
 			}
+			// Клонирование массива
+			B = A.clone();
 
-			
-			
-			
-		}
-	}
-	
-	
-		public void equal() {
+			// Проход по массиву A
 			for (int i = 0; i < x; i++) {
 				for (int j = 0; j < y; j++) {
-					 if(p.x == i & p.y == j) continue;
-					if( A[p.x][p.y] == A[i][j] & maxEqual < A[i][j]) {
-						maxEqual = A[i][j];
-					};
+					// Проход по массиву B
+					for (int k = 0; k < x; k++) {
+						for (int m = 0; m < y; m++) {
+							if (i == k & j == m)
+								continue; // исключение равенства на себя
 
+							// Проверка значений удлвлетворяющих условию
+							if ((A[i][j] == B[k][m]) & maxEqual <= A[i][j]) {
+								maxEqual = A[i][j];
+							}
+						}
+					}
 				}
 			}
-			System.out.println(maxEqual);
+
+			System.out.println("Наибольшее значение равное другому элементу массива: " + maxEqual);
 		}
-		
-	
+	}
 }
